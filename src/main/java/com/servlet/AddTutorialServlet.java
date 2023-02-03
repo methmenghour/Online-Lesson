@@ -21,27 +21,13 @@ import com.mysql.cj.Session;
 public class AddTutorialServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public AddTutorialServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		/*
-		 * // TODO Auto-generated method stub String
-		 * title=request.getParameter("title"); String
-		 * description=request.getParameter("description");
-		 * response.getWriter().append("Served at: "+title);
-		 * //response.getWriter().append("Served at: ").append(request.getContextPath());
-		 * 
-		 * 	response.getWriter().append("Served at: "+title+" "+description+" "+example); 
-		 */	
+
 		String title=request.getParameter("title");
 		String description=request.getParameter("description");
 		String example=request.getParameter("example");
@@ -60,18 +46,5 @@ public class AddTutorialServlet extends HttpServlet {
 		
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	/*
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-		String title=request.getParameter("title");
-		String description=request.getParameter("description");
-		String example=request.getParameter("example");
-		Tutorial tutorial =new Tutorial(title,description,example);
-		System.out.println(tutorial);
 
-	}
-   */
 }

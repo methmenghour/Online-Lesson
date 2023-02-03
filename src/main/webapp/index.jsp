@@ -15,11 +15,6 @@ pageEncoding="ISO-8859-1"%>
 </head>
 <body>
 <%@include file="navbar.jsp"%>
-<%-- <%
-Connection conn=DBConnect.getConn();
-out.print(conn);
-%> --%>
-
 <div class="container">
     <div class="row mt-5">
          <div class="col d-flex justify-content-end">
@@ -54,10 +49,6 @@ out.print(conn);
 			      <th><%=t.getTitle() %></th>	
 			      <th><%=t.getDecription() %></th>
 			      <th><%=t.getExample() %></th>	      
-			    <%--   <td>
-			      <a href="Edit_Tutorial.jsp?id=<%=t.getId()%>" class="btn btn-sm btn-primary"><i class="bi bi-pencil"></i></a>
-			       <a class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></a>	      
-			      </td>	 --%>
 			       <td>
 			      <a href="Edit_Tutorial.jsp?id=<%=t.getId()%>" class="btn btn-sm btn-primary"><i class="bi bi-pencil"></i></a>
 			      </td>	 
