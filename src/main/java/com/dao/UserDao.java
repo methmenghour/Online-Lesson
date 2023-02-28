@@ -7,24 +7,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.entity.Tutorial;
+import com.entity.User;
 
-public class TutorialDao {
+public class UserDao {
 
 	private static Connection conn;
-	public TutorialDao(Connection conn) {
+
+	public UserDao(Connection conn) {
 		super();
 		this.conn=conn
 				;
 	}
-	public boolean addTutorial(Tutorial tutorial) {
+	public boolean addUser(User user) {
 		boolean f=false;
 		try {
 			
-			String sql="insert into tutorial_db.tbl_tip(title,description,exampleHtmlEscape) values(?,?,?)";
+			String sql="insert into tutorial_db.user(UserName,Password) values(?,?)";
 			   PreparedStatement ps = conn.prepareStatement(sql);
-			   ps.setString(1,tutorial.getTitle());
-			   ps.setString(2,tutorial.getDecription());
-			   ps.setString(3,tutorial.getExample());
+			   ps.setString(1,user.getUserName());
+			   ps.setString(2,user.getPassword());
+			 
 			   int i=ps.executeUpdate();
 			   if(i==1) {
 				   f=true;
@@ -34,19 +36,18 @@ public class TutorialDao {
 		}
 		return f;
 	}
-	public List<Tutorial>getAllTutorial(){
-		List<Tutorial> list=new ArrayList<Tutorial>();
-		Tutorial t=null;
+	public List<User>getAllUser(){
+		List<User> list=new ArrayList<User>();
+		User t=null;
       try {
-	  String sql="SELECT * FROM tutorial_db.tbl_tip";
+	  String sql="SELECT * FROM tutorial_db.user";
 	  PreparedStatement ps = conn.prepareStatement(sql);
 	  ResultSet rs=ps.executeQuery();
 	  while(rs.next()) {
-		  t=new Tutorial();
+		  t=new User();
 		  t.setId(rs.getInt(1));
-		  t.setTitle(rs.getString(2));
-		  t.setDecription(rs.getString(3));
-		  t.setExample(rs.getString(4));
+		  t.setUserName(rs.getString(2));
+		  t.setPassword(rs.getString(3));
 		  list.add(t);
 	  }
 		}catch(Exception e) {
@@ -55,38 +56,34 @@ public class TutorialDao {
 		
 		return list;
 	}
-	public Tutorial getTuturialById(int id) {
-		Tutorial t=null;
+	public User getUserById(int id) {
+		User t=null;
 		 try {
-			  String sql="SELECT * FROM tutorial_db.tbl_tip where tip_id=?";
+			  String sql="SELECT * FROM tutorial_db.user where Id=?";
 			  PreparedStatement ps = conn.prepareStatement(sql);
 			  ps.setInt(1, id);
 			  ResultSet rs=ps.executeQuery();
 			  while(rs.next()) {
-				  t=new Tutorial();
+				  t=new User();
 				  t.setId(rs.getInt(1));
-				  t.setTitle(rs.getString(2));
-				  t.setDecription(rs.getString(3));
-				  t.setExample(rs.getString(4));
+				  t.setUserName(rs.getString(2));
+				  t.setPassword(rs.getString(3));
 			  }
-				System.out.println(t.getDecription());
-
 
 				}catch(Exception e) {
 					e.printStackTrace();
 				}
 		return t;		
 	}
-	public boolean UpdateTutorial(Tutorial tutorial) {
+	public boolean UpdateUser(User user) {
 		boolean f=false;
 		try {
 			
-			String sql="update tutorial_db.tbl_tip set title=?,description=?,exampleHtmlEscape=? where tip_id=?";
+			String sql="update tutorial_db.user set UserName=?,Password=? where Id=?";
 			   PreparedStatement ps = conn.prepareStatement(sql);
-			   ps.setString(1,tutorial.getTitle());
-			   ps.setString(2,tutorial.getDecription());
-			   ps.setString(3,tutorial.getExample());
-			   ps.setInt(4,tutorial.getId());
+			   ps.setString(1,user.getUserName());
+			   ps.setString(2,user.getPassword());			  
+			   ps.setInt(3,user.getId());
 
 			   int i=ps.executeUpdate();
 			   if(i==1) {
@@ -97,11 +94,11 @@ public class TutorialDao {
 		}
 		return f;
 	}
-	public boolean deleteTutorial(int id) {
+	public boolean deleteUser(int id) {
 		boolean f=false;
 		try {
 			
-			String sql="delete from tutorial_db.tbl_tip where tip_id=?";
+			String sql="delete from tutorial_db.User where Id=?";
 			   PreparedStatement ps = conn.prepareStatement(sql);
 			   ps.setInt(1,id);
 

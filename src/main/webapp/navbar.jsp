@@ -10,7 +10,10 @@
           <a class="nav-link active" aria-current="page" href="index.jsp">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="Add_Tutorial.jsp">Add Tutorial</a>
+          <a class="nav-link" href="index.jsp">List Tutorial</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="ListUser.jsp">List User</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
