@@ -13,20 +13,22 @@
 <%@include file="navbar.jsp"%>
 
 <div class="container">
-	<div class="row">	     
+	<div class="row mt-4">
+	    <div class="col"></div>
 		<div class="col">
 		    <form action="AddUserServlet" method="GET">
 			  <div class="mb-3">
 			    <label for="username" class="form-label">User Name</label>
-			    <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp">
+			    <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp" required>
 			  </div>
 			  <div class="mb-3">
 				  <label for="password" class="form-label">Password</label>
-				   <input type="password" class="form-control" id="password" name="password" aria-describedby="emailHelp">				  
+				   <input type="password" class="form-control" id="password" name="password" aria-describedby="emailHelp" required>				  
 			  </div>
-			  <button type="submit" class="btn btn-primary">Submit</button>
+			  <button type="submit" class="btn btn-primary">Register</button>
 			</form>		
 		</div>
+	   <div class="col"></div>		
 	</div>
 </div>
 </body>

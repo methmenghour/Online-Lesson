@@ -10,15 +10,15 @@
           <a class="nav-link active" aria-current="page" href="index.jsp">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="index.jsp">List Tutorial</a>
+          <a class="nav-link" href="ListTutorial.jsp">List Tutorial</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="ListUser.jsp">List User</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+      <form class="d-flex">
+          <a href="Add_User.jsp" class="btn btn-primary">Register</a>
+          <a href="#" class="btn btn-primary">Login</a>    
       </form>
     </div>
   </div>

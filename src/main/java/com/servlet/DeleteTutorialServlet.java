@@ -26,7 +26,7 @@ public class DeleteTutorialServlet extends HttpServlet {
 	    TutorialDao dao =new TutorialDao(DBConnect.getConn());
 		 boolean f=dao.deleteTutorial(id);
 	        if(f) {
-				response.sendRedirect("index.jsp");
+				response.sendRedirect("ListTutorial.jsp");
 				System.out.println("delete Sucessfully...");
 				
 			}else {

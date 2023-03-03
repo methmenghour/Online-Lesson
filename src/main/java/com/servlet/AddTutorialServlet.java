@@ -35,7 +35,7 @@ public class AddTutorialServlet extends HttpServlet {
 		TutorialDao dao =new TutorialDao(DBConnect.getConn());
 		boolean f=dao.addTutorial(tutorial);
 		if(f) {
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("ListTutorial.jsp");
 			System.out.println(" Add Sucessfully...");
 			
 		}else {

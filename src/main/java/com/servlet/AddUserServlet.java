@@ -30,7 +30,7 @@ public class AddUserServlet extends HttpServlet {
 		
 		String username=request.getParameter("username");
 		String password=request.getParameter("password");
-		
+	
 		User user =new User(username,password);	
 		UserDao dao =new UserDao(DBConnect.getConn());
 		
