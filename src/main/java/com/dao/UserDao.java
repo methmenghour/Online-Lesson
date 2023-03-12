@@ -75,6 +75,26 @@ public class UserDao {
 				}
 		return t;		
 	}
+	public User getUserLogin(User user) {
+		User t=null;
+		 try {
+			  String sql="SELECT * FROM tutorial_db.user where UserName=? AND Password=?";
+			  PreparedStatement ps = conn.prepareStatement(sql);
+			  ps.setString(1,user.getUserName());
+			   ps.setString(2,user.getPassword());
+			  ResultSet rs=ps.executeQuery();
+			  while(rs.next()) {
+				  t=new User();
+				  t.setId(rs.getInt(1));
+				  t.setUserName(rs.getString(2));
+				  t.setPassword(rs.getString(3));
+			  }
+
+				}catch(Exception e) {
+					e.printStackTrace();
+				}
+		return t;		
+	}
 	public boolean UpdateUser(User user) {
 		boolean f=false;
 		try {

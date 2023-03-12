@@ -9,16 +9,24 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="index.jsp">Home</a>
         </li>
+           <% 
+         String username = (String)request.getSession().getAttribute("username");
+         String password = (String)request.getSession().getAttribute("password");
+         %>
         <li class="nav-item">
           <a class="nav-link" href="ListTutorial.jsp">List Tutorial</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="ListUser.jsp">List User</a>
+          <a class="nav-link" href="ListUser.jsp">List User</a>          
+        </li>
+         <li class="nav-item">   
+           <a class="nav-link" href="#"> <%=username %> AND <%=password%></a>        
         </li>
       </ul>
+      
       <form class="d-flex">
           <a href="Add_User.jsp" class="btn btn-primary">Register</a>
-          <a href="#" class="btn btn-primary">Login</a>    
+          <a href="Login.jsp" class="btn btn-primary">Login</a>              
       </form>
     </div>
   </div>

@@ -3,6 +3,7 @@ pageEncoding="ISO-8859-1"%>
 <%@page import="com.conn.DBConnect"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="com.entity.Tutorial"%>
+<%@page import="com.entity.User"%>
 <%@page import="com.dao.TutorialDao"%>
 <%@ page import="java.util.List" %>
 
@@ -16,6 +17,14 @@ pageEncoding="ISO-8859-1"%>
 <body>
 <%@include file="navbar.jsp"%>
 <div class="container">
+
+
+    <h3>User Name: ${username} </h3>
+    <h3>Password: ${password} </h3>
+    <h3>Id: ${id} </h3>
+
+
+
     <div class="row">
     			  <%
 			  TutorialDao daoCard=new TutorialDao(DBConnect.getConn());
@@ -31,7 +40,9 @@ pageEncoding="ISO-8859-1"%>
 				  </div>
 				</div>                 
              </div> 
+               
 			   <%} 
+			  
 			   %>          
     </div>
 </div>
